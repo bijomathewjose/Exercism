@@ -1,13 +1,13 @@
 {
-  "name": "@exercism/javascript-translation-service",
-  "description": "Exercism concept exercise on promises",
-  "author": "Derk-Jan Karrenbeld <derk-jan+github@karrenbeld.info>",
+  "name": "@exercism/javascript-regular-chatbot",
+  "description": "Exercism concept exercise on basics",
+  "author": "Julen Diaz <hello@julentech.com>",
   "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/exercism/javascript",
-    "directory": "exercises/concept/translation-service"
+    "directory": "exercises/concept/regular-chatbot"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

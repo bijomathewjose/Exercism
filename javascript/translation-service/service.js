@@ -15,6 +15,7 @@ export class TranslationService {
    */
   constructor(api) {
     this.api = api;
+
   }
 
   /**
@@ -27,7 +28,7 @@ export class TranslationService {
    * @returns {Promise<string>}
    */
   free(text) {
-    return this.api.fetch(text).then((output)=>output.translation)
+    return this.api.fetch(text).then((output) => output.translation)
   }
 
   /**
@@ -41,13 +42,12 @@ export class TranslationService {
    * @returns {Promise<string[]>}
    */
   batch(texts) {
-      if(texts.length===0){
-        return Promise.reject(new BatchIsEmpty)
-      }
-      return Promise.all(texts.map(text=>this.free(text).catch((error)=>Promise.reject(error))))
-    
-  }
+    if (texts.length === 0) {
+      return Promise.reject(new BatchIsEmpty)
+    }
+    return Promise.all(texts.map(text => this.free(text).catch((error) => Promise.reject(error))))
 
+  }
   /**
    * Requests the service for some text to be translated.
    *
@@ -58,7 +58,18 @@ export class TranslationService {
    * @returns {Promise<void>}
    */
   request(text) {
-    throw new Error('Implement the request function');
+    // This is a function that will return a promise. The promise
+    // requests from the API a translation, and uses its callback
+    // to resolve or reject the promise.
+    const Checker = () => new Promise((resolve, reject) => {
+      this.api.request(text, (error) => {
+        error ? reject(error) : resolve(error);
+      })
+    })
+
+    return Checker()  //   try
+      .catch(Checker) // retry one
+      .catch(Checker) // retry two
   }
 
   /**
@@ -72,7 +83,16 @@ export class TranslationService {
    * @returns {Promise<string>}
    */
   premium(text, minimumQuality) {
-    throw new Error('Implement the premium function');
+    return this.api.fetch(text)
+      .catch(() => {
+        return this.request(text).then(() => this.api.fetch(text))
+      })
+      .then(res => {
+        if (res.quality < minimumQuality)
+          throw new QualityThresholdNotMet('');
+        return res.translation
+      })
+
   }
 }
 
