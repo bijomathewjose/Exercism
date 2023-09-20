@@ -1,0 +1,33 @@
+{
+  "authors": [],
+  "contributors": [
+    "amscotti",
+    "ankorGH",
+    "matthewmorgan",
+    "ovidiu141",
+    "PakkuDon",
+    "rchavarria",
+    "serixscorpio",
+    "SleeplessByte"
+  ],
+  "files": {
+    "solution": [
+      "isogram.js"
+    ],
+    "test": [
+      "isogram.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.js"
+    ]
+  },
+  "blurb": "Determine if a word or phrase is an isogram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Isogram",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}

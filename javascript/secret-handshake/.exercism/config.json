@@ -1,0 +1,34 @@
+{
+  "authors": [
+    "matthewmorgan"
+  ],
+  "contributors": [
+    "ankorGH",
+    "ovidiu141",
+    "PSalant726",
+    "rchavarria",
+    "ryanplusplus",
+    "SleeplessByte",
+    "xarxziux"
+  ],
+  "files": {
+    "solution": [
+      "secret-handshake.js"
+    ],
+    "test": [
+      "secret-handshake.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.js"
+    ]
+  },
+  "blurb": "Given a decimal number, convert it to the appropriate sequence of events for a secret handshake.",
+  "source": "Bert, in Mary Poppins",
+  "source_url": "http://www.imdb.com/title/tt0058331/quotes/qt0437047",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}

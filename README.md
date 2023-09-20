@@ -6,3 +6,8 @@
 | 2     | Python    | 63          |
 | 3     | Java      | 8           |   
 | Total |           | 94         |        
+
+
+# Excerism Javascript
+| Sl.no | Exercise | Date | 
+| 1     |           |       |
